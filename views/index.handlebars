@@ -1,0 +1,33 @@
+<h1>Let's be productive...</h1>
+
+<form class="" action="/" method="post">
+  <input type="text" name="todo" value=""/>
+  <input type="submit" name="" value="Create To Do"/>
+</form>
+<ul>
+
+    {{#each todos}}
+    {{#unless done}}
+    <form class="" action="/mark" method="post">
+    <li>
+      <input type="submit" value="Mark Complete">
+      <input type="hidden" name="task" value="{{task}}">
+      {{task}}
+    </li>
+    </form>
+    {{/unless}}
+    {{/each}}
+
+
+</ul>
+
+
+<h2>Completed Tasks</h2>
+<ul>
+  {{#each todos}}
+  {{#if done}}
+
+    <li>{{task}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
